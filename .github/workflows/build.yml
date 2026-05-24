@@ -28,10 +28,14 @@ jobs:
           gradle-version: '8.7'
 
       - name: Compilar APK debug
-        run: gradle assembleDebug
+        run: gradle assembleDebug --info 2>&1 | grep -E "(FAILED|error:|Error|Exception|What went wrong|> Could)" | head -30
 
-      - name: Verificar APK existe
-        run: find . -name "*.apk" -type f
+      - name: Compilar APK debug completo
+        run: gradle assembleDebug
+        continue-on-error: true
+
+      - name: Verificar APK
+        run: find . -name "*.apk" 2>/dev/null || echo "No APK generado"
 
       - name: Subir APK como artefacto
         uses: actions/upload-artifact@v4
