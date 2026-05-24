@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0D0D0D"
+    android:padding="20dp">
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Configuración de IPs"
+        android:textColor="#03DAC6" android:textSize="18sp" android:textStyle="bold"
+        android:paddingBottom="20dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Samsung TV (IP local):" android:textColor="#AAAAAA" android:textSize="13sp"/>
+    <EditText android:id="@+id/et_samsung_ip"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="192.168.1.X" android:inputType="text"
+        android:textColor="#FFFFFF" android:textColorHint="#555"
+        android:backgroundTint="#333" android:paddingBottom="10dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="LG TV (IP local):" android:textColor="#AAAAAA" android:textSize="13sp"
+        android:paddingTop="10dp"/>
+    <EditText android:id="@+id/et_lg_ip"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="192.168.1.X" android:inputType="text"
+        android:textColor="#FFFFFF" android:textColorHint="#555"
+        android:backgroundTint="#333" android:paddingBottom="10dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="Android TV / TV Box (IP local):" android:textColor="#AAAAAA" android:textSize="13sp"
+        android:paddingTop="10dp"/>
+    <EditText android:id="@+id/et_androidtv_ip"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="192.168.1.X" android:inputType="text"
+        android:textColor="#FFFFFF" android:textColorHint="#555"
+        android:backgroundTint="#333"/>
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Ajustes del TV > Red > Información de red para ver la IP"
+        android:textColor="#666" android:textSize="11sp"
+        android:paddingTop="12dp" android:paddingBottom="20dp"/>
+
+    <Button android:id="@+id/btn_save"
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="GUARDAR"
+        android:backgroundTint="#03DAC6"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <Button android:id="@+id/btn_clear_lg_key"
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="Re-emparejar LG"
+        android:backgroundTint="#333333"
+        android:textColor="#AAAAAA"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>
