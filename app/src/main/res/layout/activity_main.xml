@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/tv_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modo: IR"
+                android:textColor="#03DAC6"
+                android:textSize="14sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✓ Listo"
+                android:textColor="#4CAF50"
+                android:textSize="13sp"/>
+
+            <LinearLayout
+                android:id="@+id/btn_setup"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:background="@drawable/btn_circle_dark"
+                android:gravity="center"
+                android:layout_marginStart="8dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="&#9881;"
+                    android:textColor="#AAAAAA"
+                    android:textSize="16sp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/rg_mode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="14dp">
+
+            <RadioButton android:id="@+id/rb_ir"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="IR"
+                android:textColor="#FFFFFF" android:buttonTint="#03DAC6"
+                android:checked="true" android:textSize="12sp"/>
+            <RadioButton android:id="@+id/rb_samsung"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="Samsung"
+                android:textColor="#FFFFFF" android:buttonTint="#03DAC6"
+                android:textSize="12sp"/>
+            <RadioButton android:id="@+id/rb_lg"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="LG"
+                android:textColor="#FFFFFF" android:buttonTint="#03DAC6"
+                android:textSize="12sp"/>
+            <RadioButton android:id="@+id/rb_androidtv"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="TV Box"
+                android:textColor="#FFFFFF" android:buttonTint="#03DAC6"
+                android:textSize="12sp"/>
+        </RadioGroup>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="12dp">
+
+            <LinearLayout android:id="@+id/btn_power"
+                style="@style/RemoteBtn.Red"
+                android:layout_marginEnd="20dp">
+                <TextView style="@style/RemoteBtnText" android:text="&#9211;"/>
+                <TextView style="@style/RemoteBtnLabel" android:text="Power"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/btn_mute"
+                style="@style/RemoteBtn.Dark">
+                <TextView style="@style/RemoteBtnText" android:text="&#128263;"/>
+                <TextView style="@style/RemoteBtnLabel" android:text="Mute"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="12dp">
+
+            <LinearLayout android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="VOL" android:textColor="#888" android:textSize="10sp"/>
+                <LinearLayout android:id="@+id/btn_vol_up" style="@style/RemoteBtn.Small">
+                    <TextView style="@style/RemoteBtnText" android:text="+"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/btn_vol_down" style="@style/RemoteBtn.Small"
+                    android:layout_marginTop="6dp">
+                    <TextView style="@style/RemoteBtnText" android:text="-"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout android:id="@+id/btn_up" style="@style/RemoteBtn.Small"
+                    android:layout_marginBottom="2dp">
+                    <TextView style="@style/RemoteBtnText" android:text="&#9650;"/>
+                </LinearLayout>
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout android:id="@+id/btn_left" style="@style/RemoteBtn.Small"
+                        android:layout_marginEnd="2dp">
+                        <TextView style="@style/RemoteBtnText" android:text="&#9664;"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/btn_ok" style="@style/RemoteBtn.Ok">
+                        <TextView style="@style/RemoteBtnText" android:text="OK"/>
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/btn_right" style="@style/RemoteBtn.Small"
+                        android:layout_marginStart="2dp">
+                        <TextView style="@style/RemoteBtnText" android:text="&#9654;"/>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/btn_down" style="@style/RemoteBtn.Small"
+                    android:layout_marginTop="2dp">
+                    <TextView style="@style/RemoteBtnText" android:text="&#9660;"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="CH" android:textColor="#888" android:textSize="10sp"/>
+                <LinearLayout android:id="@+id/btn_ch_up" style="@style/RemoteBtn.Small">
+                    <TextView style="@style/RemoteBtnText" android:text="+"/>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/btn_ch_down" style="@style/RemoteBtn.Small"
+                    android:layout_marginTop="6dp">
+                    <TextView style="@style/RemoteBtnText" android:text="-"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="12dp">
+
+            <LinearLayout android:id="@+id/btn_home" style="@style/RemoteBtn.Dark"
+                android:layout_marginEnd="16dp">
+                <TextView style="@style/RemoteBtnText" android:text="&#8962;"/>
+                <TextView style="@style/RemoteBtnLabel" android:text="Home"/>
+            </LinearLayout>
+
+            <LinearLayout android:id="@+id/btn_back" style="@style/RemoteBtn.Dark">
+                <TextView style="@style/RemoteBtnText" android:text="&#8617;"/>
+                <TextView style="@style/RemoteBtnLabel" android:text="Back"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingBottom="12dp">
+
+            <LinearLayout android:id="@+id/btn_red"
+                style="@style/RemoteBtn.Color"
+                android:backgroundTint="#F44336">
+                <TextView style="@style/RemoteBtnText" android:text="&#9679;"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_green"
+                style="@style/RemoteBtn.Color"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginStart="8dp">
+                <TextView style="@style/RemoteBtnText" android:text="&#9679;"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_yellow"
+                style="@style/RemoteBtn.Color"
+                android:backgroundTint="#FFC107"
+                android:layout_marginStart="8dp">
+                <TextView style="@style/RemoteBtnText" android:text="&#9679;"/>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/btn_blue"
+                style="@style/RemoteBtn.Color"
+                android:backgroundTint="#2196F3"
+                android:layout_marginStart="8dp">
+                <TextView style="@style/RemoteBtnText" android:text="&#9679;"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="NÚMEROS" android:textColor="#555" android:textSize="10sp"
+            android:layout_gravity="center" android:paddingBottom="6dp"/>
+
+        <GridLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:useDefaultMargins="true"
+            android:layout_gravity="center">
+
+            <LinearLayout android:id="@+id/btn_1" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="1"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_2" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="2"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_3" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="3"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_4" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="4"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_5" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="5"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_6" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="6"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_7" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="7"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_8" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="8"/></LinearLayout>
+            <LinearLayout android:id="@+id/btn_9" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="9"/></LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="0dp"/>
+            <LinearLayout android:id="@+id/btn_0" style="@style/RemoteBtn.Num"><TextView style="@style/RemoteBtnText" android:text="0"/></LinearLayout>
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>
