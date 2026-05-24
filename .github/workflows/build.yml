@@ -19,11 +19,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Permisos a gradlew
-        run: chmod +x gradlew
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.4'
 
       - name: Compilar APK debug
-        run: ./gradlew assembleDebug
+        run: gradle assembleDebug
 
       - name: Subir APK como artefacto
         uses: actions/upload-artifact@v4
