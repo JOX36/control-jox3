@@ -25,7 +25,7 @@ jobs:
           gradle-version: '8.4'
 
       - name: Compilar APK debug
-        run: gradle assembleDebug
+        run: gradle assembleDebug --stacktrace 2>&1 | tail -80
 
       - name: Subir APK como artefacto
         uses: actions/upload-artifact@v4
