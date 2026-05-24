@@ -19,7 +19,7 @@ public class LGController {
         this.prefs = prefs;
     }
 
-    public void sendCommand(String uri) throws Exception {
+    public void sendCommand(String command) throws Exception {
         String clientKey = prefs.getString("lg_client_key", "");
         String wsUrl     = "ws://" + ip + ":3000";
 
@@ -44,10 +44,10 @@ public class LGController {
                         }
                     }
                     registered = true;
-                    if (uri.startsWith("KEY:")) {
-                        send(buildKeyMsg(uri.substring(4)));
+                    if (command.startsWith("KEY:")) {
+                        send(buildKeyMsg(command.substring(4)));
                     } else {
-                        send(buildCommandMsg(uri));
+                        send(buildCommandMsg(command));
                     }
                 } else {
                     latch.countDown();
@@ -79,8 +79,8 @@ public class LGController {
                keyField + "}}";
     }
 
-    private String buildCommandMsg(String uri) {
-        return "{\"type\":\"request\",\"id\":\"cmd1\",\"uri\":\"" + uri + "\"}";
+    private String buildCommandMsg(String cmd) {
+        return "{\"type\":\"request\",\"id\":\"cmd1\",\"uri\":\"" + cmd + "\"}";
     }
 
     private String buildKeyMsg(String key) {
