@@ -22,19 +22,27 @@ jobs:
       - name: Instalar Android SDK
         uses: android-actions/setup-android@v3
 
-      - name: Instalar build tools
+      - name: Instalar plataforma Android 34
         run: sdkmanager "build-tools;34.0.0" "platforms;android-34"
 
-      - name: Dar permisos gradle wrapper
+      - name: Descargar Gradle manualmente
         run: |
           curl -L https://services.gradle.org/distributions/gradle-8.4-bin.zip -o gradle.zip
           unzip -q gradle.zip
-          export GRADLE_HOME=$PWD/gradle-8.4
-          export PATH=$GRADLE_HOME/bin:$PATH
-          gradle assembleDebug
+          echo "$PWD/gradle-8.4/bin" >> $GITHUB_PATH
+
+      - name: Compilar APK y guardar log completo
+        run: gradle assembleDebug > build_log.txt 2>&1 || true
+
+      - name: Mostrar error completo
+        run: |
+          echo "=== ERRORES ==="
+          grep -A 10 "What went wrong" build_log.txt || echo "No se encontró What went wrong"
+          echo "=== ULTIMAS 20 LINEAS ==="
+          tail -20 build_log.txt
 
       - name: Verificar APK
-        run: find . -name "*.apk" 2>/dev/null || echo "No APK"
+        run: find . -name "*.apk" 2>/dev/null || echo "No APK generado"
 
       - name: Subir APK
         uses: actions/upload-artifact@v4
